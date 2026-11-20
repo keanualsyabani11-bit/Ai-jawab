@@ -21,17 +21,18 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Setup Gradle 8.6
-        uses: gradle/actions/setup-gradle@v3
-        with:
-          gradle-version: '8.6'
-
-      - name: Create gradlew
+      - name: Create gradlew manually
         run: |
-          gradle wrapper --gradle-version=8.6
+          mkdir -p gradle/wrapper
+          cat > gradle/wrapper/gradle-wrapper.properties << 'PROPS'
+          distributionBase=GRADLE_USER_HOME
+          distributionPath=wrapper/dists
+          distributionUrl=https\://services.gradle.org/distributions/gradle-8.6-bin.zip
+          zipStoreBase=GRADLE_USER_HOME
+          zipStorePath=wrapper/dists
+          PROPS
+          curl -sL https://raw.githubusercontent.com/gradle/gradle/v8.6.0/gradlew -o gradlew
           chmod +x gradlew
-        env:
-          GRADLE_USER_HOME: /root/.gradle
 
       - name: Create local.properties
         run: echo "sdk.dir=$ANDROID_HOME" > local.properties
