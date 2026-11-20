@@ -1,0 +1,6 @@
+-repackageclasses 'a'
+-allowaccessmodification
+-keep class com.jaccksallas.aiexam.FloatingService
+-keep class com.jaccksallas.aiexam.ExamAccessibilityService
+-keepattributes *Annotation*
+-dontwarn **

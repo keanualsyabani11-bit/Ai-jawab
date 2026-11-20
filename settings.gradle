@@ -1,0 +1,2 @@
+rootProject.name = "AIExamOverlay"
+include ':app'

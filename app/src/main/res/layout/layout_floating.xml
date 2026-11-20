@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/bg_floating"
+    android:minWidth="270dp"
+    android:maxWidth="300dp"
+    android:elevation="16dp">
+
+    <!-- Header / Drag Handle -->
+    <LinearLayout
+        android:id="@+id/dragHandle"
+        android:orientation="horizontal"
+        android:background="#1A2744"
+        android:paddingStart="12dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:background="#3D7FFF"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:text="AI EXAM"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/btnMinimize"
+            android:text="—"
+            android:textColor="#8899CC"
+            android:textSize="14sp"
+            android:padding="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/btnClose"
+            android:text="X"
+            android:textColor="#FF4466"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:padding="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <!-- Content Panel -->
+    <LinearLayout
+        android:id="@+id/contentPanel"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Score bar -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:background="#0A1428"
+            android:padding="8dp"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvScoreInfo"
+                android:text="Nilai: 0  |  KKM 75"
+                android:textColor="#00D68F"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/btnScore"
+                android:text="+ Nilai"
+                android:textColor="#3D7FFF"
+                android:textSize="10sp"
+                android:background="@drawable/bg_button_secondary"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <!-- Label soal -->
+        <TextView
+            android:text="SOAL"
+            android:textColor="#445577"
+            android:textSize="9sp"
+            android:letterSpacing="0.15"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- Input soal -->
+        <EditText
+            android:id="@+id/etQuestion"
+            android:hint="Ketik atau scan soal..."
+            android:hintTextColor="#2A3D60"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:background="#0A1428"
+            android:padding="10dp"
+            android:minLines="3"
+            android:maxLines="5"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Tombol aksi baris 1 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginBottom="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/btnSolve"
+                android:text="Jawab Otomatis"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_button_primary"
+                android:padding="9dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <View android:layout_width="6dp" android:layout_height="1dp"/>
+
+            <TextView
+                android:id="@+id/btnScan"
+                android:text="Scan Layar"
+                android:textColor="#3D7FFF"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_button_secondary"
+                android:padding="9dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <!-- Tombol aksi baris 2 -->
+        <TextView
+            android:id="@+id/btnFill"
+            android:text="Isi Jawaban ke Kolom"
+            android:textColor="#00D68F"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:background="#0A2010"
+            android:padding="9dp"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Label jawaban -->
+        <TextView
+            android:text="JAWABAN AI"
+            android:textColor="#445577"
+            android:textSize="9sp"
+            android:letterSpacing="0.15"
+            android:layout_marginBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!-- Output jawaban -->
+        <TextView
+            android:id="@+id/tvAnswer"
+            android:text=""
+            android:textColor="#00D68F"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:background="#0A1428"
+            android:padding="10dp"
+            android:minHeight="40dp"
+            android:layout_marginBottom="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Status -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:text="Siap"
+            android:textColor="#445577"
+            android:textSize="9sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</LinearLayout>
